@@ -1,4 +1,5 @@
 import { useReducer } from "react";
+import DigitButton from "./DigitButton";
 import "./styles.css"
 
 export const ACTIONS = {
