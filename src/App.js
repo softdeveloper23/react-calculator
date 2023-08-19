@@ -30,6 +30,15 @@ function reducer(state, { type, payload }) {
         return state
       }
 
+      if (state.previousOperand == null) {
+        return {
+          ...state,
+          operation: payload.operation,
+          previousOperand: state.currentOperand,
+          currentOperand: null,
+        }
+      }
+
     case ACTIONS.CLEAR:
       return {}
   }
