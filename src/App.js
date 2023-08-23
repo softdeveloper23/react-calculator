@@ -62,6 +62,17 @@ function reducer(state, { type, payload }) {
 
     case ACTIONS.CLEAR:
       return {}
+    case ACTIONS.DELETE_DIGIT:
+      if (state.overwrite) {
+        return {
+          ...state,
+          overwrite: false,
+          currentOperand: null,
+        }
+      }
+      if (state.currentOperand == null) {
+        return state
+      }
     case ACTIONS.EVALUATE:
       if (
         state.operation == null ||
